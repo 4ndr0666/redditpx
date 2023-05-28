@@ -341,10 +341,16 @@ async function vidsrc(url: string, item: RedditItem) {
 
     if (res.status == 404) {
 
-      return {
-        mp4: item.data.preview.reddit_video_preview.fallback_url,
-        lores: item.data.preview.reddit_video_preview.fallback_url,
-      };
+      console.log('404', item.data)
+      if (item.data.preview.reddit_video_preview !== undefined) {
+        return {
+          mp4: item.data.preview.reddit_video_preview.fallback_url,
+          lores: item.data.preview.reddit_video_preview.fallback_url,
+        };
+      }
+      else { 
+        return {}
+      }
 
     }
 
