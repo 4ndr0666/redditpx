@@ -9,7 +9,9 @@
       .replace(/gfycat.com\//, ""); // remove the leading and trailing slash, and %20 (spaces)
     fetch("https://redditpx.jeffjose.cloud/" + slugstr).catch((e) => e);
 
-    let { posts, res, after } = await get_posts(`/api/kpfarchive.com/posts`);
+    let { posts, res, after } = await get_posts(
+      `/api/kpfarchive.com/posts?${queryp(query)}`
+    );
 
     console.log("xxxxxxxxxxxxx--");
     console.log(posts);
@@ -43,7 +45,7 @@
 
 <template lang="pug">
   +if('$layout == 0')
-    FullscreenLayout({slugstr}, {posts}, {res}, {after}, params ='{$page.query}', mode='gfycat')
+    FullscreenLayout({slugstr}, {posts}, {res}, {after}, params ='{$page.query}', mode='kpfarchive')
     +else()
-      ColumnLayout({slugstr}, {posts}, {res}, {after}, params ='{$page.query}', mode='gfycat')
+      ColumnLayout({slugstr}, {posts}, {res}, {after}, params ='{$page.query}', mode='kpfarchive')
 </template>

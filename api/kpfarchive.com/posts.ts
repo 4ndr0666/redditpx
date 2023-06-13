@@ -2,7 +2,10 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 import fetch from 'node-fetch';
 
-let COUNT = 500
+
+function queryp(query) {
+  return Object.entries(query).map(([key, val]) => `${key}=${val}`).join("&");
+}
 
 export default async function handler(
   request: VercelRequest,
@@ -10,9 +13,8 @@ export default async function handler(
 ) {
 
   let apiurl
-  https://kpfarchive.com/api/posts?deleted=&from=&page=1&s=&sort=&to=&type=&username=
 
-  apiurl = `https://kpfarchive.com/api/posts?page=1`
+  apiurl = `https://kpfarchive.com/api/posts?page=${request.query.after ?? 1}&${queryp(request.query)}`
 
   await fetch_and_respond(request, response, apiurl)
 }
@@ -21,7 +23,6 @@ async function fetch_and_respond(request: VercelRequest, response: VercelRespons
 
   const r = await fetch(apiurl)
   const json: any = await r.json()
-  console.log(json)
 
   const urls = json.map((x) => x.url) // Using gfyName instead of gfyId so that we can avoid an api call from the frontend
   const items = json
@@ -31,7 +32,7 @@ async function fetch_and_respond(request: VercelRequest, response: VercelRespons
   })
 
 
-  const cursor = encodeURIComponent(json.cursor)
+  const cursor = parseInt(request.query.after as string ?? '1') + 1
 
   if (request.query.jsonp) {
     response.status(200).send(
@@ -44,7 +45,7 @@ async function fetch_and_respond(request: VercelRequest, response: VercelRespons
 }
 
 
-function mkresponse(urls: string[], items: any[], cursor: string) {
+function mkresponse(urls: string[], items: any[], cursor: number) {
 
   return {
     kind: "Listing",

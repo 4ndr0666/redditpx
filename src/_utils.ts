@@ -83,6 +83,7 @@ function is_image(item: RedditItem) {
 function is_post(item: RedditItem) {
   // t3
   // t1 = to support /u/jeffjose
+
   return item.kind == "t3" || item.kind == "t1";
 }
 
@@ -349,7 +350,7 @@ async function vidsrc(url: string, item: RedditItem) {
           lores: item.data.preview.reddit_video_preview.fallback_url,
         };
       }
-      else { 
+      else {
         return {}
       }
 

@@ -183,7 +183,6 @@
     let newposts;
 
     let [userid, collectionid] = slugstr.split("/");
-
     if (mode === "reddit") {
       ({
         posts: newposts,
@@ -209,6 +208,14 @@
         ...res
       } = await get_posts(
         `/api/gettyimages.com/photos?${queryp(params)}&after=${after}`
+      ));
+    } else if (mode == "kpfarchive") {
+      ({
+        posts: newposts,
+        after,
+        ...res
+      } = await get_posts(
+        `/api/kpfarchive.com/posts?${queryp(params)}&after=${after}`
       ));
     }
 

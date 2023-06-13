@@ -197,6 +197,14 @@
       } = await get_posts(
         `/api/gettyimages.com/photos?${queryp(params)}&after=${after}`
       ));
+    } else if (mode == "kpfarchive") {
+      ({
+        posts: newposts,
+        after,
+        ...res
+      } = await get_posts(
+        `/api/kpfarchive.com/posts?${queryp(params)}&after=${after}`
+      ));
     }
 
     // load `favorite` from localstorage
