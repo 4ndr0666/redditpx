@@ -1011,7 +1011,7 @@
               +if('currpost.preview.vid.mp4')
                 source(src="{currpost.preview.vid.mp4}")
                 
-      +elseif('currpost.is_album')
+      +elseif('currpost.is_album && currpost.preview.img.album[albumindex]')
         +if('currpost.preview.img.album[albumindex].is_video')
           video.video(autoplay, loop='{!$autoplay}', playsinline, muted='{$muted}', on:ended="{videoended}")
             source(src="{currpost.preview.img.album[albumindex].hires}")
@@ -1132,7 +1132,7 @@
                   Icon(icon="{faSync}")
   +if('$prefetch')
     .prefetch
-      +each('nexturls as nexturl (nexturl.preview.img.default)')
+      +each('nexturls as nexturl (nexturl.preview.img.default + nexturl.id)')
         +if('$hires')
           +if('nexturl.is_album')
             img(alt="prefetch-hires", src="{nexturl.preview.img.album[0].hires}")

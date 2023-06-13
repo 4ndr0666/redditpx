@@ -2,6 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 import fetch from 'node-fetch';
 
+import { nanoid } from 'nanoid';
+
 
 function queryp(query) {
   return Object.entries(query).map(([key, val]) => `${key}=${val}`).join("&");
@@ -165,7 +167,7 @@ function mkdataitem(url, item) {
       "mod_reason_by": null,
       "removal_reason": null,
       "link_flair_background_color": "",
-      "id": url,
+      "id": nanoid(3),
       "is_robot_indexable": true,
       "report_reasons": null,
       "author": 'kpfarchive',
