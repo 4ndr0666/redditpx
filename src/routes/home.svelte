@@ -141,6 +141,7 @@
         a(href='/imgur.com/a/albumname')
         a(href='/imgur.com/gallery/galleryname')
         a(href='/gettyimages.com/photos/query')
+        a(href='/kpfarchive.com')
 </template>
 
 <style lang="sass">

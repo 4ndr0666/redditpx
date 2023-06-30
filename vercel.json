@@ -61,6 +61,10 @@
       "destination": "/gettyimages.com/photos/query/index.html"
     },
     {
+      "source": "/kpfarchive.com/:query",
+      "destination": "/kpfarchive.com/index.html"
+    },
+    {
       "source": "/api/(.*)*",
       "destination": "/api"
     }
