@@ -1008,8 +1008,10 @@
             +else()
               +if('currpost.preview.vid.webm')
                 source(src="{currpost.preview.vid.webm}")
+                source(src="{currpost.preview.vid.lores}")
               +if('currpost.preview.vid.mp4')
                 source(src="{currpost.preview.vid.mp4}")
+                source(src="{currpost.preview.vid.lores}")
                 
       +elseif('currpost.is_album && currpost.preview.img.album[albumindex]')
         +if('currpost.preview.img.album[albumindex].is_video')
@@ -1153,8 +1155,10 @@
                 +if('nexturl.preview')
                   +if('nexturl.preview.vid.webm')
                     source(src="{nexturl.preview.vid.webm}")
+                    source(src="{nexturl.preview.vid.lores}")
                   +if('nexturl.preview.vid.mp4')
                     source(src="{nexturl.preview.vid.mp4}")
+                    source(src="{nexturl.preview.vid.lores}")
                   +else()
                     source(src="{nexturl.default}")
 </template>

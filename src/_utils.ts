@@ -311,7 +311,7 @@ async function vidsrc(url: string, item: RedditItem) {
       gif: `https://i.imgur.com/${name}.gif`,
       //webm: `https://i.imgur.com/${name}.webm`,
       mp4: `https://i.imgur.com/${name}.mp4`,
-      lores: `https://i.imgur.com/${name}.mp4`,
+      lores: item.data.preview.reddit_video_preview.fallback_url,
     };
   } else if (url.includes("gfycat.com/")) {
     let name = url.match(/gfycat.com\/(.*)/)[1];
