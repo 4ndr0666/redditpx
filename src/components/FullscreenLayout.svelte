@@ -742,6 +742,8 @@
       currpost.url.includes("redgifs.com")
     ) {
       text = currpost.preview.vid.mp4;
+    } else if (currpost.url.includes("https://i.imgur.com")) {
+      text = currpost.preview.vid.lores;
     } else if (currpost.is_image && !currpost.is_album) {
       text = currpost.url;
     } else if (currpost.is_video) {
