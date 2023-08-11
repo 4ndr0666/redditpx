@@ -5,7 +5,7 @@
     let slugstr = path.substring(1); // remove the leading slash
 
     let { posts, res, after } = await get_posts(
-      `https://reddit.com/${slugstr}.json?${queryp(query)}`
+      `https://reddit.com/${slugstr}/.json?${queryp(query)}`
     );
 
     return { posts, after, res, slugstr };

@@ -186,7 +186,7 @@
       after,
       ...res
     } = await get_posts(
-      `https://reddit.com/${slugstr}.json?after=${after}&${queryp(params)}`
+      `https://reddit.com/${slugstr}/.json?after=${after}&${queryp(params)}`
     ));
 
     console.log(posts);
@@ -705,7 +705,10 @@
 
   function copySrcToClipboard() {
     let text;
-    if (currpost.url.startsWith("https://v.redd.it/") || currpost.url.includes("redgifs.com")) {
+    if (
+      currpost.url.startsWith("https://v.redd.it/") ||
+      currpost.url.includes("redgifs.com")
+    ) {
       text = currpost.preview.vid.mp4;
     } else if (currpost.is_image && !currpost.is_album) {
       text = currpost.url;

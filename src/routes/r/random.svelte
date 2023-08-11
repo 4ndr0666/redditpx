@@ -6,7 +6,7 @@
     let slugstr = path.substring(1).replace(/\/$/, "").replace(/%20/g, ""); // remove the leading and trailing slash, and %20 (spaces)
 
     let { posts, res, after } = await get_posts(
-      `https://reddit.com/${slugstr}.json?${queryp(query)}`
+      `https://reddit.com/${slugstr}/.json?${queryp(query)}`
     );
 
     if (posts.length) {

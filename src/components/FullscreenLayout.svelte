@@ -189,7 +189,7 @@
         after,
         ...res
       } = await get_posts(
-        `https://reddit.com/${slugstr}.json?after=${after}&${queryp(params)}`
+        `https://reddit.com/${slugstr}/.json?after=${after}&${queryp(params)}`
       ));
     } else if (mode == "gfycat") {
       ({
