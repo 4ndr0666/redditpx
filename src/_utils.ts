@@ -334,12 +334,19 @@ async function vidsrc(url: string, item: RedditItem) {
       };
     }
 
-    let res = await fetch(
-      `https://api.gfycat.com/v1/gfycats/${name}`,
-      {
-        //mode: "no-cors"
-      },
-    );
+    let res
+    try {
+      res = await fetch(
+        `https://api.gfycat.com/v1/gfycats/${name}`,
+        {
+          //mode: "no-cors"
+        },
+      );
+
+    }
+    catch (e) {
+      return {}
+    }
 
     if (res.status == 404) {
 
