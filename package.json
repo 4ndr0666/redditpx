@@ -1,9 +1,9 @@
 {
   "name": "redditpx",
-  "description": "Reddit Slideshow",
-  "type": "module",
-  "license": "MIT",
   "version": "0.0.1",
+  "description": "Reddit Slideshow",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
@@ -16,6 +16,9 @@
     "docker": "docker build --tag=gcr.io/redditpx/stage .; docker run -e 'PORT=3000' -p 80:3000 gcr.io/redditpx/stage",
     "stage": "docker build --tag=gcr.io/redditpx/stage .; docker push gcr.io/redditpx/stage",
     "prod": "docker build --tag=gcr.io/redditpx/prod .; docker push gcr.io/redditpx/prod"
+  },
+  "resolutions": {
+    "serialize-javascript": "^2.1.1"
   },
   "dependencies": {
     "@vercel/node": "^2.9.7",
@@ -31,9 +34,6 @@
     "serialize-javascript": "^6.0.0",
     "simple-svelte-autocomplete": "^2.1.0",
     "sirv": "^2.0.2"
-  },
-  "resolutions": {
-    "serialize-javascript": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
@@ -64,5 +64,8 @@
     "svelte-preprocess": "^4.10.2",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
