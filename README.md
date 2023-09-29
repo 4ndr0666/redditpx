@@ -1,66 +1,36 @@
-<p>
-  <a href="https://redditpx.com">
-    <img alt="redditpx.com - A fast, modern alternative to redditp.com" src="https://raw.github.com/jeffjose/redditpx/master/banner.png">
-  </a>
-</p>
+# YourProjectName
 
-# [redditpx](redditpx.com) - A fast, modern alternative to redditp.com
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Getting Started](#getting-started)
+4. [Usage](#usage)
+5. [Troubleshooting](#troubleshooting)
+6. [FAQ](#faq)
 
-[redditpx](redditpx.com) is a fast & fun way to make slideshows out of reddit.
+## Introduction
+This project is a beginner-friendly guide to fetching and displaying media content from a specified URL using JavaScript's Fetch API and CORS proxy.
 
-## Features
+## Prerequisites
+- Basic understanding of HTML and JavaScript
+- A modern web browser
+- A text editor like VSCode, Sublime Text, or Notepad++
 
-redditpx has the following new features
+## Getting Started
+1. Download the project files from this repository.
+2. Extract the downloaded folder.
+3. Open the folder using your preferred text editor.
 
-- [x] better mobile mode
-- [x] scrolling grid view
-- [x] hover preview
-- [x] filtering
-- [x] favorite
-- [x] batch download
-- [x] fast and modern code
-- [x] user profile
-- [x] /r/random and /r/randnsfw
-- [x] filter images, videos or both
-- [x] search subreddits
-- [ ] customizable keyboard shortcuts
+## Usage
+1. Navigate to the `index.html` file in your text editor.
+2. Double-click the `index.html` file to open it in your web browser.
+3. You should see the fetched image displayed on the webpage.
 
-.. in addition to the features it shares with redditp
+## Troubleshooting
+If the image does not display, open the browser's console to view any error messages.
 
-- [x] multireddit
-- [x] autoplay on/off
-- [x] nsfw on/off
-- [x] direct open fullimage
-- [x] keyboard shortcuts
-- [x] open reddit post and comments
-- [x] /new, /top, /hot support
-- [x] /domain, /user, /u support
+## FAQ
+- **Q: How do I open the browser's console?**
+  - A: Right-click on the webpage, select "Inspect Element", and then go to the "Console" tab.
 
-## Keybindings
-
-| Action                                                             | Binding                                 |
-| ------------------------------------------------------------------ | --------------------------------------- |
-| <kbd>Left</kbd>, <kbd>a</kbd>, <kbd>k</kbd>, <kbd>Page up</kbd>    | Previous                                |
-| <kbd>Right</kbd>, <kbd>d</kbd>, <kbd>j</kbd>, <kbd>Page down</kbd> | Next                                    |
-| <kbd>Up</kbd>                                                      | Album next                              |
-| <kbd>Down</kbd>                                                    | Album previous                          |
-| <kbd>m</kbd>                                                       | Add/Remove from multi-reddit            |
-| <kbd>s</kbd>                                                       | Sound on/off                            |
-| <kbd>q</kbd>, <kbd>p</kbd>                                         | Autoplay on/off                         |
-| <kbd>f</kbd>                                                       | Jump to subreddit                       |
-| <kbd>/</kbd>                                                       | Filter posts                            |
-| <kbd>x</kbd>                                                       | Toggle favorites                        |
-| <kbd>r</kbd>                                                       | Open post on reddit.com                 |
-| <kbd>o</kbd>                                                       | Open post on old.reddit.com             |
-| <kbd>i</kbd>                                                       | Open direct link to media (image,video) |
-| <kbd>l</kbd>                                                       | Open duplicates                         |
-| <kbd>h</kbd>                                                       | Toggle UI visibility                    |
-| <kbd>g</kbd>                                                       | Toggle layout (grid/fullscreen)         |
-| <kbd>v</kbd>                                                       | Toggle image/video                      |
-| <kbd>c</kbd>                                                       | Copy direct media link to clipboard     |
-
-## Acknowledgements
-
-- svelte/sapper for framework
-- twemoji for images
-- favicon.io for favicons
+For more detailed information, refer to the code comments in the `main.js` file.
